@@ -16,25 +16,7 @@ with ZipFile(file_name,'r') as zip:
   zip.extractall()
   print('Done')
   
-import os,glob
-from tqdm._tqdm_notebook import tqdm_notebook as tqdm
-import cv2
-os.chdir('/content/yes')
-X = []
-y = []
-for i in tqdm(os.listdir()):
-      img = cv2.imread(i)   
-      img = cv2.resize(img,(28,28))
-      X.append(img)
-      y.append((i[0:1]))
-os.chdir('/content/no')
-for i in tqdm(os.listdir()):
-      img = cv2.imread(i)   
-      img = cv2.resize(img,(28,28))
-      X.append(img)
-for i in range(1,99):
-    y.append('N')
-    
+
 import pathlib
 import tensorflow as tf
 // path
